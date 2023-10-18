@@ -1,0 +1,632 @@
+fileFormatVersion: 2
+guid: 31c98d9ade5e67843b5e5d04177e509d
+timeCreated: 1509718519
+licenseType: Free
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000360000003700000038000000390000003a0000003b0000003c0000003d0000003e0000003f000000400000004100000042000000430000004400000045000000460000004700000048000000490000004a0000004b0000004c0000004d0000004e0000004f000000500000005100000052000000530000005400000055000000560000005700000058000000590000005a0000005b0000005c0000005d0000005e0000005f000000600000006100000062000000630000006400000065000000660000006700000068000000690000006a0000006b0000006c0000006d0000006e0000006f000000700000007100000072000000730000007400000075000000760000007700000078000000790000007a0000007b0000007c0000007d0000007e0000007f000000800000008100000082000000830000008400000085000000860000008700000088000000890000008a0000008b0000008c0000008d0000008e0000008f000000900000009100000092000000930000009400000095000000960000009700000098000000990000009a0000009b0000009c0000009d0000009e0000009f000000a0000000a1000000a2000000a3000000a4000000a5000000a6000000a7000000a8000000a9000000aa000000ab000000ac000000ad000000ae000000af000000b0000000b1000000b2000000b3000000b4000000b5000000b6000000b7000000b8000000b9000000ba000000bb000000bc000000bd000000be000000bf000000c0000000c1000000c2000000c3000000c4000000c5000000c6000000c7000000c8000000c9000000ca000000cb000000cc000000cd000000ce000000cf000000d0000000d1000000d2000000d3000000d4000000d5000000d6000000d7000000d8000000d9000000da000000db000000dc000000dd000000de000000df000000e0000000e1000000e2000000e3000000e4000000e5000000e6000000e7000000e8000000e9000000ea000000eb000000ec000000ed000000ee000000ef000000f0000000f1000000f2000000f3000000f4000000f5000000f6000000f7000000f8000000f9000000fa000000fb000000fc000000fd000000fe000000ff0000000001000001010000
+  assetHash:
+    serializedVersion: 2
+    Hash: 3360a11fecdefc0a74d54cfbbea8f38f
+  longitude: -112.067
+  latitude: 33.45
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: -2.922405, y: 3.8456264, z: -7.005476}
+      lookAt: {x: -1.1971486, y: 0.2563723, z: 0.7867003}
+      up: {x: 0.08866595, y: 0.9120132, z: 0.40046266}
+      fov: 30
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes:
+    - camera:
+        position: {x: -3.10036, y: 3.2357028, z: -6.5575957}
+        lookAt: {x: -1.3751036, y: -0.3535517, z: 1.2345805}
+        up: {x: 0.08866595, y: 0.9120132, z: 0.40046266}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: Scene 1
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Group 10
+    100004: Group 100
+    100006: Group 102
+    100008: Group 104
+    100010: Group 106
+    100012: Group 108
+    100014: Group 110
+    100016: Group 112
+    100018: Group 114
+    100020: Group 116
+    100022: Group 118
+    100024: Group 12
+    100026: Group 120
+    100028: Group 122
+    100030: Group 124
+    100032: Group 126
+    100034: Group 128
+    100036: Group 14
+    100038: Group 16
+    100040: Group 18
+    100042: Group 2
+    100044: Group 20
+    100046: Group 22
+    100048: Group 24
+    100050: Group 26
+    100052: Group 28
+    100054: Group 30
+    100056: Group 32
+    100058: Group 34
+    100060: Group 36
+    100062: Group 38
+    100064: Group 4
+    100066: Group 40
+    100068: Group 42
+    100070: Group 44
+    100072: Group 46
+    100074: Group 48
+    100076: Group 50
+    100078: Group 52
+    100080: Group 54
+    100082: Group 56
+    100084: Group 58
+    100086: Group 6
+    100088: Group 60
+    100090: Group 62
+    100092: Group 64
+    100094: Group 66
+    100096: Group 68
+    100098: Group 70
+    100100: Group 72
+    100102: Group 74
+    100104: Group 76
+    100106: Group 78
+    100108: Group 8
+    100110: Group 80
+    100112: Group 82
+    100114: Group 84
+    100116: Group 86
+    100118: Group 88
+    100120: Group 90
+    100122: Group 92
+    100124: Group 94
+    100126: Group 96
+    100128: Group 98
+    100130: leg1
+    100132: leg1 1
+    100134: leg1 10
+    100136: leg1 11
+    100138: leg1 12
+    100140: leg1 13
+    100142: leg1 14
+    100144: leg1 15
+    100146: leg1 16
+    100148: leg1 17
+    100150: leg1 18
+    100152: leg1 19
+    100154: leg1 2
+    100156: leg1 20
+    100158: leg1 21
+    100160: leg1 22
+    100162: leg1 23
+    100164: leg1 24
+    100166: leg1 25
+    100168: leg1 26
+    100170: leg1 27
+    100172: leg1 28
+    100174: leg1 29
+    100176: leg1 3
+    100178: leg1 30
+    100180: leg1 31
+    100182: leg1 4
+    100184: leg1 5
+    100186: leg1 6
+    100188: leg1 7
+    100190: leg1 8
+    100192: leg1 9
+    100194: leg2
+    100196: leg2 1
+    100198: leg2 10
+    100200: leg2 11
+    100202: leg2 12
+    100204: leg2 13
+    100206: leg2 14
+    100208: leg2 15
+    100210: leg2 16
+    100212: leg2 17
+    100214: leg2 18
+    100216: leg2 19
+    100218: leg2 2
+    100220: leg2 20
+    100222: leg2 21
+    100224: leg2 22
+    100226: leg2 23
+    100228: leg2 24
+    100230: leg2 25
+    100232: leg2 26
+    100234: leg2 27
+    100236: leg2 28
+    100238: leg2 29
+    100240: leg2 3
+    100242: leg2 30
+    100244: leg2 31
+    100246: leg2 4
+    100248: leg2 5
+    100250: leg2 6
+    100252: leg2 7
+    100254: leg2 8
+    100256: leg2 9
+    400000: //RootNode
+    400002: Group 10
+    400004: Group 100
+    400006: Group 102
+    400008: Group 104
+    400010: Group 106
+    400012: Group 108
+    400014: Group 110
+    400016: Group 112
+    400018: Group 114
+    400020: Group 116
+    400022: Group 118
+    400024: Group 12
+    400026: Group 120
+    400028: Group 122
+    400030: Group 124
+    400032: Group 126
+    400034: Group 128
+    400036: Group 14
+    400038: Group 16
+    400040: Group 18
+    400042: Group 2
+    400044: Group 20
+    400046: Group 22
+    400048: Group 24
+    400050: Group 26
+    400052: Group 28
+    400054: Group 30
+    400056: Group 32
+    400058: Group 34
+    400060: Group 36
+    400062: Group 38
+    400064: Group 4
+    400066: Group 40
+    400068: Group 42
+    400070: Group 44
+    400072: Group 46
+    400074: Group 48
+    400076: Group 50
+    400078: Group 52
+    400080: Group 54
+    400082: Group 56
+    400084: Group 58
+    400086: Group 6
+    400088: Group 60
+    400090: Group 62
+    400092: Group 64
+    400094: Group 66
+    400096: Group 68
+    400098: Group 70
+    400100: Group 72
+    400102: Group 74
+    400104: Group 76
+    400106: Group 78
+    400108: Group 8
+    400110: Group 80
+    400112: Group 82
+    400114: Group 84
+    400116: Group 86
+    400118: Group 88
+    400120: Group 90
+    400122: Group 92
+    400124: Group 94
+    400126: Group 96
+    400128: Group 98
+    400130: leg1
+    400132: leg1 1
+    400134: leg1 10
+    400136: leg1 11
+    400138: leg1 12
+    400140: leg1 13
+    400142: leg1 14
+    400144: leg1 15
+    400146: leg1 16
+    400148: leg1 17
+    400150: leg1 18
+    400152: leg1 19
+    400154: leg1 2
+    400156: leg1 20
+    400158: leg1 21
+    400160: leg1 22
+    400162: leg1 23
+    400164: leg1 24
+    400166: leg1 25
+    400168: leg1 26
+    400170: leg1 27
+    400172: leg1 28
+    400174: leg1 29
+    400176: leg1 3
+    400178: leg1 30
+    400180: leg1 31
+    400182: leg1 4
+    400184: leg1 5
+    400186: leg1 6
+    400188: leg1 7
+    400190: leg1 8
+    400192: leg1 9
+    400194: leg2
+    400196: leg2 1
+    400198: leg2 10
+    400200: leg2 11
+    400202: leg2 12
+    400204: leg2 13
+    400206: leg2 14
+    400208: leg2 15
+    400210: leg2 16
+    400212: leg2 17
+    400214: leg2 18
+    400216: leg2 19
+    400218: leg2 2
+    400220: leg2 20
+    400222: leg2 21
+    400224: leg2 22
+    400226: leg2 23
+    400228: leg2 24
+    400230: leg2 25
+    400232: leg2 26
+    400234: leg2 27
+    400236: leg2 28
+    400238: leg2 29
+    400240: leg2 3
+    400242: leg2 30
+    400244: leg2 31
+    400246: leg2 4
+    400248: leg2 5
+    400250: leg2 6
+    400252: leg2 7
+    400254: leg2 8
+    400256: leg2 9
+    2300000: //RootNode
+    2300002: Group 10
+    2300004: Group 100
+    2300006: Group 102
+    2300008: Group 104
+    2300010: Group 106
+    2300012: Group 108
+    2300014: Group 110
+    2300016: Group 112
+    2300018: Group 114
+    2300020: Group 116
+    2300022: Group 118
+    2300024: Group 12
+    2300026: Group 120
+    2300028: Group 122
+    2300030: Group 124
+    2300032: Group 126
+    2300034: Group 128
+    2300036: Group 14
+    2300038: Group 16
+    2300040: Group 18
+    2300042: Group 2
+    2300044: Group 20
+    2300046: Group 22
+    2300048: Group 24
+    2300050: Group 26
+    2300052: Group 28
+    2300054: Group 30
+    2300056: Group 32
+    2300058: Group 34
+    2300060: Group 36
+    2300062: Group 38
+    2300064: Group 4
+    2300066: Group 40
+    2300068: Group 42
+    2300070: Group 44
+    2300072: Group 46
+    2300074: Group 48
+    2300076: Group 50
+    2300078: Group 52
+    2300080: Group 54
+    2300082: Group 56
+    2300084: Group 58
+    2300086: Group 6
+    2300088: Group 60
+    2300090: Group 62
+    2300092: Group 64
+    2300094: Group 66
+    2300096: Group 68
+    2300098: Group 70
+    2300100: Group 72
+    2300102: Group 74
+    2300104: Group 76
+    2300106: Group 78
+    2300108: Group 8
+    2300110: Group 80
+    2300112: Group 82
+    2300114: Group 84
+    2300116: Group 86
+    2300118: Group 88
+    2300120: Group 90
+    2300122: Group 92
+    2300124: Group 94
+    2300126: Group 96
+    2300128: Group 98
+    2300130: leg1
+    2300132: leg1 1
+    2300134: leg1 10
+    2300136: leg1 11
+    2300138: leg1 12
+    2300140: leg1 13
+    2300142: leg1 14
+    2300144: leg1 15
+    2300146: leg1 16
+    2300148: leg1 17
+    2300150: leg1 18
+    2300152: leg1 19
+    2300154: leg1 2
+    2300156: leg1 20
+    2300158: leg1 21
+    2300160: leg1 22
+    2300162: leg1 23
+    2300164: leg1 24
+    2300166: leg1 25
+    2300168: leg1 26
+    2300170: leg1 27
+    2300172: leg1 28
+    2300174: leg1 29
+    2300176: leg1 3
+    2300178: leg1 30
+    2300180: leg1 31
+    2300182: leg1 4
+    2300184: leg1 5
+    2300186: leg1 6
+    2300188: leg1 7
+    2300190: leg1 8
+    2300192: leg1 9
+    2300194: leg2
+    2300196: leg2 1
+    2300198: leg2 10
+    2300200: leg2 11
+    2300202: leg2 12
+    2300204: leg2 13
+    2300206: leg2 14
+    2300208: leg2 15
+    2300210: leg2 16
+    2300212: leg2 17
+    2300214: leg2 18
+    2300216: leg2 19
+    2300218: leg2 2
+    2300220: leg2 20
+    2300222: leg2 21
+    2300224: leg2 22
+    2300226: leg2 23
+    2300228: leg2 24
+    2300230: leg2 25
+    2300232: leg2 26
+    2300234: leg2 27
+    2300236: leg2 28
+    2300238: leg2 29
+    2300240: leg2 3
+    2300242: leg2 30
+    2300244: leg2 31
+    2300246: leg2 4
+    2300248: leg2 5
+    2300250: leg2 6
+    2300252: leg2 7
+    2300254: leg2 8
+    2300256: leg2 9
+    3300000: //RootNode
+    3300002: Group 10
+    3300004: Group 100
+    3300006: Group 102
+    3300008: Group 104
+    3300010: Group 106
+    3300012: Group 108
+    3300014: Group 110
+    3300016: Group 112
+    3300018: Group 114
+    3300020: Group 116
+    3300022: Group 118
+    3300024: Group 12
+    3300026: Group 120
+    3300028: Group 122
+    3300030: Group 124
+    3300032: Group 126
+    3300034: Group 128
+    3300036: Group 14
+    3300038: Group 16
+    3300040: Group 18
+    3300042: Group 2
+    3300044: Group 20
+    3300046: Group 22
+    3300048: Group 24
+    3300050: Group 26
+    3300052: Group 28
+    3300054: Group 30
+    3300056: Group 32
+    3300058: Group 34
+    3300060: Group 36
+    3300062: Group 38
+    3300064: Group 4
+    3300066: Group 40
+    3300068: Group 42
+    3300070: Group 44
+    3300072: Group 46
+    3300074: Group 48
+    3300076: Group 50
+    3300078: Group 52
+    3300080: Group 54
+    3300082: Group 56
+    3300084: Group 58
+    3300086: Group 6
+    3300088: Group 60
+    3300090: Group 62
+    3300092: Group 64
+    3300094: Group 66
+    3300096: Group 68
+    3300098: Group 70
+    3300100: Group 72
+    3300102: Group 74
+    3300104: Group 76
+    3300106: Group 78
+    3300108: Group 8
+    3300110: Group 80
+    3300112: Group 82
+    3300114: Group 84
+    3300116: Group 86
+    3300118: Group 88
+    3300120: Group 90
+    3300122: Group 92
+    3300124: Group 94
+    3300126: Group 96
+    3300128: Group 98
+    3300130: leg1
+    3300132: leg1 1
+    3300134: leg1 10
+    3300136: leg1 11
+    3300138: leg1 12
+    3300140: leg1 13
+    3300142: leg1 14
+    3300144: leg1 15
+    3300146: leg1 16
+    3300148: leg1 17
+    3300150: leg1 18
+    3300152: leg1 19
+    3300154: leg1 2
+    3300156: leg1 20
+    3300158: leg1 21
+    3300160: leg1 22
+    3300162: leg1 23
+    3300164: leg1 24
+    3300166: leg1 25
+    3300168: leg1 26
+    3300170: leg1 27
+    3300172: leg1 28
+    3300174: leg1 29
+    3300176: leg1 3
+    3300178: leg1 30
+    3300180: leg1 31
+    3300182: leg1 4
+    3300184: leg1 5
+    3300186: leg1 6
+    3300188: leg1 7
+    3300190: leg1 8
+    3300192: leg1 9
+    3300194: leg2
+    3300196: leg2 1
+    3300198: leg2 10
+    3300200: leg2 11
+    3300202: leg2 12
+    3300204: leg2 13
+    3300206: leg2 14
+    3300208: leg2 15
+    3300210: leg2 16
+    3300212: leg2 17
+    3300214: leg2 18
+    3300216: leg2 19
+    3300218: leg2 2
+    3300220: leg2 20
+    3300222: leg2 21
+    3300224: leg2 22
+    3300226: leg2 23
+    3300228: leg2 24
+    3300230: leg2 25
+    3300232: leg2 26
+    3300234: leg2 27
+    3300236: leg2 28
+    3300238: leg2 29
+    3300240: leg2 3
+    3300242: leg2 30
+    3300244: leg2 31
+    3300246: leg2 4
+    3300248: leg2 5
+    3300250: leg2 6
+    3300252: leg2 7
+    3300254: leg2 8
+    3300256: leg2 9
+    4300000: Mesh Bench_Windermere
+    4300002: Mesh Group 2
+    4300004: Mesh Group 4
+    4300006: Mesh leg1
+    4300008: Mesh leg2
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0254
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
