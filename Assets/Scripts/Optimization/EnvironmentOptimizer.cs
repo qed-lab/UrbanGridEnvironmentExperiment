@@ -36,7 +36,7 @@ public class EnvironmentOptimizer : MonoBehaviour
     {
         for(int i = 0; i < TargetTerrains.Count; i++) 
         {
-            if (Vector3.Distance(TargetTerrainCenters[i], Camera.main.transform.position) <= 300f)
+            if (Vector3.Distance(TargetTerrainCenters[i], Camera.main.transform.position) <= 400f &&Vector3.Angle(TargetTerrainCenters[i] - Camera.main.transform.position, Camera.main.transform.forward) < 120f)
             {
                 if (!TargetTerrains[i].gameObject.activeSelf)
                 {
