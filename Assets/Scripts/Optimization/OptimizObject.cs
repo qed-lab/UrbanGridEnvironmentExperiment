@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class OptimizObject : MonoBehaviour
-{
-    private void OnEnable()
+{ 
+
+    void Start()
     {
         RegisiterForATerrain();
     }
