@@ -13,7 +13,11 @@ public class EyesightDebug : MonoBehaviour
 
     void Update()
     {
-        transform.position = Camera.main.transform.position;    
-        transform.rotation = Quaternion.LookRotation(Dir, Camera.main.transform.up);
+        //Get the world position of the eyes
+        transform.position = EyeSight.Instance.EyePosition;
+        //Get the world rotation of the eyes
+        transform.rotation = EyeSight.Instance.EyeDirection;
+        Debug.Log("EyeSight: Pos " + EyeSight.Instance.EyePosition);
+        Debug.Log("EyeSight: Dir " + EyeSight.Instance.EyePosition);
     }
 }

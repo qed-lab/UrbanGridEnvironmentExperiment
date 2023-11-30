@@ -1,48 +1,34 @@
 using System.Collections;
-using Wave.Essence.Eye;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class OvertObject : MonoBehaviour
 {
-    public MeshRenderer Renderer;
-    public Material OvertM;
-    public AnimationCurve Carve;
+    [Range(0.0f, 10f)]
+    public float Radius = 0.5f;
+    public Quaternion CueRotation = Quaternion.identity;
+
     private void OnEnable()
     {
-        if (EyeManager.Instance != null) { EyeManager.Instance.EnableEyeTracking = true; }
+
+    }
+    private void Start()
+    {
+        GameObject tmpGObj = Instantiate(OvertCueManager.Instance.OvertCuePrefab);
+        tmpGObj.transform.position = transform.position + CueRotation * transform.forward * Radius;
+        tmpGObj.transform.LookAt(transform.position);
+        tmpGObj.transform.localScale *= OvertCueManager.Instance.CueSize;
     }
 
-    Vector3 EyeSight;
     void Update()
     {
-        //EyeManager.Instance.GetCombindedEyeDirectionNormalized(out EyeSight);
-        //EyesightDebug.Instance.Dir = EyeSight;
-        if (Vector3.Angle(Camera.main.transform.rotation * EyeSight, transform.position - Camera.main.transform.position) <= 180 || true)
-        {
-            if (Renderer.materials[0] != null)
-            {
-                Renderer.materials[0].SetFloat("_Scale", Carve.Evaluate(Time.time%1));
-            }
-        }
-        else
-        {
-            Renderer.materials[0].SetFloat("_Scale", 1);
-        }
+
     }
 
-    IEnumerator OvertShining()
+    private void OnDrawGizmos()
     {
-        YieldInstruction wait = new WaitForSeconds(0.1f);
-        float scale = 1;
-        if (Renderer.materials[0] != null)
-        {
-            while (true)
-            {
-                Debug.Log("Scale: " + scale);
-                Renderer.materials[0].SetFloat("_Scale", scale = scale == 1 ? 1.01f : 1);
-                yield return wait;
-            }
-        }
-        Debug.Log("No material!");
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position, Radius);
+        Gizmos.DrawWireSphere(transform.position + CueRotation * transform.forward * Radius, Radius * 0.1f);
     }
 }
