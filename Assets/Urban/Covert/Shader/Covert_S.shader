@@ -65,8 +65,22 @@ Shader"QEDLab/Covert"
                 // darken light's illumination with shadow, keep ambient intact
                 fixed3 lighting = i.diff * shadow + i.ambient;
                 col.rgb *= lighting;
+    
+                //---Covert
                 tmp = i.worldPos.xyz - _CenterPosition.xyz;
-                col.rgb += 0.092f * (length(tmp) / _Radius) * _Modulation * col.rgb;
+                float tmpDis = ((_Radius - length(tmp)) / _Radius);
+                if (tmpDis > 1)
+                {
+                    tmpDis = 1;
+                }
+                else if (tmpDis < 0)
+                {
+                    tmpDis = 0;
+
+                }
+                col.rgb += 0.095f * tmpDis * _Modulation * (1, 1, 1);
+                //col.rgb = (length(tmp) / _Radius) * (1,1,1);
+                //---Covert
                 return col;
             }
             ENDCG

@@ -21,7 +21,7 @@ public class CovertObject : MonoBehaviour
     {
         Mat.SetVector("_CenterPosition", new Vector4(Pivot.transform.position.x, Pivot.transform.position.y, Pivot.transform.position.z, 0));
         Mat.SetFloat("_Radius", Radius);
-        Mat.SetFloat("_Radius", Carve.Evaluate(Time.time % 1.0f));
+        Mat.SetFloat("_Modulation", Carve.Evaluate(Time.time % 0.2f));
     }
 
     private void OnDrawGizmos()
