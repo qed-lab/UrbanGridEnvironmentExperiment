@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EyesightDebug : MonoBehaviour
+public class PlayerEyesight : MonoBehaviour
 {
-    public static EyesightDebug Instance;
+    public static PlayerEyesight Instance;
     public Vector3 Dir;
     void Start()
     {
@@ -16,8 +16,6 @@ public class EyesightDebug : MonoBehaviour
         //Get the world position of the eyes
         transform.position = EyeSight.Instance.EyePosition;
         //Get the world rotation of the eyes
-        transform.rotation = EyeSight.Instance.EyeDirection;
-        Debug.Log("EyeSight: Pos " + EyeSight.Instance.EyePosition);
-        Debug.Log("EyeSight: Dir " + EyeSight.Instance.EyePosition);
+        transform.localRotation = EyeSight.Instance.EyeDirection;
     }
 }

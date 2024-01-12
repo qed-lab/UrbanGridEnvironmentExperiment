@@ -7,9 +7,16 @@ using Wave.Essence.Eye;
 public class EyeSight : MonoBehaviour
 {
     public static EyeSight Instance;
+    /// <summary>
+    /// The world space rotation of the eyesight
+    /// </summary>
     public Quaternion EyeDirection = Quaternion.identity;
+    /// <summary>
+    /// The world space position of the eyesight
+    /// </summary>
     public Vector3 EyePosition = Vector3.zero;
     Vector3 EyeSightForward = Vector3.zero;
+    public Transform Trans;
 
     private void OnEnable()
     {
@@ -23,7 +30,7 @@ public class EyeSight : MonoBehaviour
     void Update()
     {
         EyeManager.Instance.GetCombindedEyeDirectionNormalized(out EyeSightForward);
-        EyeManager.Instance.GetCombinedEyeOrigin(out EyePosition);
+        EyePosition = Camera.main.transform.position;
         EyeDirection = Quaternion.LookRotation(EyeSightForward, Camera.main.transform.up);
     }
 }

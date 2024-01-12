@@ -67,8 +67,11 @@ Shader"QEDLab/Covert"
                 col.rgb *= lighting;
     
                 //---Covert
+                //Get the vector between this pixel and the center of the object
                 tmp = i.worldPos.xyz - _CenterPosition.xyz;
+                //Convert the vector into the length (the distance)
                 float tmpDis = ((_Radius - length(tmp)) / _Radius);
+                //Limmit the length between 0~1
                 if (tmpDis > 1)
                 {
                     tmpDis = 1;
@@ -76,10 +79,9 @@ Shader"QEDLab/Covert"
                 else if (tmpDis < 0)
                 {
                     tmpDis = 0;
-
                 }
+                //Weight the length and multiply it with (1,1,1) white
                 col.rgb += 0.095f * tmpDis * _Modulation * (1, 1, 1);
-                //col.rgb = (length(tmp) / _Radius) * (1,1,1);
                 //---Covert
                 return col;
             }
