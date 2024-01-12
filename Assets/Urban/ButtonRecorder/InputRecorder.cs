@@ -20,12 +20,11 @@ public class InputRecorder : MonoBehaviour
         }
         WriteString();
     }
-    public GameObject Video;
+
     void Update()
     {
         if (IsPressed() || Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            //Video.SetActive(true);
             Times.Add(Time.time);
             WriteString();
         }
@@ -41,7 +40,12 @@ public class InputRecorder : MonoBehaviour
             }
         }
     }
+
     float OldButtonValue = 0;
+    /// <summary>
+    /// True = pressed in this frame, False = not pressed in this frame
+    /// </summary>
+    /// <returns></returns>
     bool IsPressed()
     {
         bool value = false;
@@ -56,6 +60,7 @@ public class InputRecorder : MonoBehaviour
         OldButtonValue = Button.action.ReadValue<float>();
         return value;
     }
+    #region Write to file
     List<float> Times = new List<float>();
     int FlieNo = -1;
     public void WriteString()
@@ -81,4 +86,5 @@ public class InputRecorder : MonoBehaviour
         StreamReader reader = new StreamReader(path);
         reader.Close();
     }
+    #endregion
 }
