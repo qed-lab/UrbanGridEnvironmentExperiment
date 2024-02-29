@@ -33,6 +33,7 @@ public class FollowSpline : MonoBehaviour
                 CurrentProgress += MovingSpeed * Time.deltaTime;
                 yield return waitAFrame;
             }
+            Application.Quit();
         }
         else
         {

@@ -27,7 +27,7 @@ public class OvertObject : MonoBehaviour
 
     void Update()
     {
-        #region Check to see if we need to show the cue
+        /*#region Check to see if we need to show the cue
         Vector3 tmpDir = (transform.position - Camera.main.transform.position).normalized;
         if (Vector3.Angle(tmpDir, EyeSight.Instance.Trans.forward) <= 3f)
         {
@@ -37,7 +37,7 @@ public class OvertObject : MonoBehaviour
         {
             CueObj.SetActive(true);
         }
-        #endregion
+        #endregion*/
     }
 
     #region UGUI
