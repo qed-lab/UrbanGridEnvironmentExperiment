@@ -16,6 +16,7 @@ public class CovertObject : MonoBehaviour
     /// The radious of the covert shader effect
     /// </summary>
     public float Radius;
+    public float originalRadius;
     /// <summary>
     /// The frequency of the covert shader effect
     /// </summary>
@@ -41,15 +42,17 @@ public class CovertObject : MonoBehaviour
 
 
         #region Check to see if we need to show the cue
+        originalRadius = Radius;
         Vector3 tmpDir = (transform.position - Camera.main.transform.position).normalized;
-        if (Vector3.Angle(tmpDir, EyeSight.Instance.Trans.forward) <= 10f)
+        if (Vector3.Angle(tmpDir, EyeSight.Instance.Trans.forward) <= 90f)
         {
             Radius = 0;
+            Debug.Log("Eye sight within range");
         }
-        //else
-        //{
-        //    CueObj.SetActive(true);
-        //}
+        else
+        {
+            Radius = originalRadius;
+        }
         #endregion
     }
 
