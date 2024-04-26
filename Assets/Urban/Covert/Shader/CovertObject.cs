@@ -29,6 +29,7 @@ public class CovertObject : MonoBehaviour
         {
             Pivot = transform;
         }
+        originalRadius = Radius;
     }
 
 
@@ -42,9 +43,8 @@ public class CovertObject : MonoBehaviour
 
 
         #region Check to see if we need to show the cue
-        originalRadius = Radius;
-        Vector3 tmpDir = (transform.position - Camera.main.transform.position).normalized;
-        if (Vector3.Angle(tmpDir, EyeSight.Instance.Trans.forward) <= 90f)
+        
+        if (EyeSightAngle() <= 10f)
         {
             Radius = 0;
             Debug.Log("Eye sight within range");
@@ -54,6 +54,12 @@ public class CovertObject : MonoBehaviour
             Radius = originalRadius;
         }
         #endregion
+    }
+
+    public float EyeSightAngle()
+    {
+        Vector3 tmpDir = (transform.position - Camera.main.transform.position).normalized;
+        return Vector3.Angle(tmpDir, EyeSight.Instance.Trans.forward);
     }
 
     #region UGUI
