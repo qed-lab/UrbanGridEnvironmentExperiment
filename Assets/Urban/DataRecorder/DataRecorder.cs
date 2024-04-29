@@ -24,7 +24,8 @@ public class DataRecorder : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(RecordingEyeSightEngle());
+        StartCoroutine(RecordingEyeSightAngle());
+        
     }
 
     void Update()
@@ -47,7 +48,7 @@ public class DataRecorder : MonoBehaviour
         }
     }
 
-    IEnumerator RecordingEyeSightEngle()
+    IEnumerator RecordingEyeSightAngle()
     {
         YieldInstruction wait = new WaitForSeconds(0.02f);
         yield return wait;
@@ -55,6 +56,7 @@ public class DataRecorder : MonoBehaviour
         while (true)
         {
             WriteString(RecordFile.EyeSight);
+            //Debug.Log(Application.persistentDataPath);
             yield return wait;
         }
     }
@@ -140,14 +142,14 @@ public class DataRecorder : MonoBehaviour
     void GetCovertObjectList(Transform parent)
     {
         CovertObjects = new List<CovertObject>();
-        Debug.Log("PPPAP1");
+        //Debug.Log("PPPAP1");
         for (int i = 0; i < parent.childCount; i++)
         {
-            Debug.Log("PPPAP2");
+            //Debug.Log("PPPAP2");
             CovertObject tmp = parent.GetChild(i).GetComponent<CovertObject>();
             if (tmp)
             {
-                Debug.Log("PPPAP3");
+                //Debug.Log("PPPAP3");
                 CovertObjects.Add(tmp); 
             }
         }
