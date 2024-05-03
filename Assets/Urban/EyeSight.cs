@@ -33,6 +33,6 @@ public class EyeSight : MonoBehaviour
         EyePosition = Camera.main.transform.position;
         EyeDirection = Quaternion.LookRotation(EyeSightForward, Camera.main.transform.up);
         Debug.Log(" Eyesight " + EyeDirection);
-        Trans.rotation = EyeDirection;
+        //Trans.rotation = EyeDirection;
     }
 }
