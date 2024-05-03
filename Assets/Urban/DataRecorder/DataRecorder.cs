@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.GeometryUtility;
 
 public class DataRecorder : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class DataRecorder : MonoBehaviour
 
     private void Start()
     {
+
         StartCoroutine(RecordingEyeSightAngle());
         
     }
@@ -93,15 +95,15 @@ public class DataRecorder : MonoBehaviour
         switch (fileType)
         {
             case RecordFile.Input:
-                path = Application.persistentDataPath + "/" + fileType.ToString() + InputFlieNo + ".txt";
+                path = Application.persistentDataPath + "/" + fileType.ToString() + InputFlieNo + ".csv";
                 if (InputFlieNo < 0)
                 {
                     InputFlieNo++;
-                    path = Application.persistentDataPath + "/" + fileType.ToString() + InputFlieNo + ".txt";
+                    path = Application.persistentDataPath + "/" + fileType.ToString() + InputFlieNo + ".csv";
                     while (File.Exists(path))
                     {
                         InputFlieNo++;
-                        path = Application.persistentDataPath + "/" + fileType.ToString() + InputFlieNo + ".txt";
+                        path = Application.persistentDataPath + "/" + fileType.ToString() + InputFlieNo + ".csv";
                     }
                 }
                 writer = new StreamWriter(path, false);
@@ -115,20 +117,36 @@ public class DataRecorder : MonoBehaviour
                 reader.Close();
                 break;
             case RecordFile.EyeSight:
-                path = Application.persistentDataPath + "/" + fileType.ToString() + EyeSightFlieNo + ".txt";
+                path = Application.persistentDataPath + "/" + fileType.ToString() + EyeSightFlieNo + ".csv";
                 if (EyeSightFlieNo < 0)
                 {
                     EyeSightFlieNo++;
-                    path = Application.persistentDataPath + "/" + fileType.ToString() + EyeSightFlieNo + ".txt";
+                    path = Application.persistentDataPath + "/" + fileType.ToString() + EyeSightFlieNo + ".csv";
                     while (File.Exists(path))
                     {
                         EyeSightFlieNo++;
-                        path = Application.persistentDataPath + "/" + fileType.ToString() + EyeSightFlieNo + ".txt";
+                        path = Application.persistentDataPath + "/" + fileType.ToString() + EyeSightFlieNo + ".csv";
                     }
                 }
+
                 writer = new StreamWriter(path, true);
-                CovertObject tmp = GetCloseistObject();
-                writer.WriteLine("TargetObject: " + tmp.gameObject.name + ", Time: " + Time.time + ", Angle" + GetCloseistObject().EyeSightAngle());
+
+                if (new FileInfo(path).Length == 0)
+                {
+                    writer.WriteLine("Target Object" + "," + "Is Visible to Camera?" + "," + "Player Distance to Target" + "," + "World Time In Seconds" + "," + "Gaze Angular Distance To Target In Degrees of Arc");
+                }
+
+                (CovertObject closestObject, float distance) = GetClosestObjectInformation();
+
+                Renderer targetRenderer = closestObject.gameObject.GetComponent<Renderer>();
+                Plane[] cameraFrustumPlanes = GeometryUtility.CalculateFrustumPlanes(Camera.main);
+                bool isVisible = GeometryUtility.TestPlanesAABB(cameraFrustumPlanes, targetRenderer.bounds);
+                int visibility = isVisible? 1 : 0;
+
+                if (distance <= 200.0f)
+                {
+                    writer.WriteLine(closestObject.gameObject.name + "," + visibility + "," + distance + "," + Time.time + "," + closestObject.EyeSightAngle());
+                }
                 writer.Close();
 
                 reader = new StreamReader(path);
@@ -155,9 +173,10 @@ public class DataRecorder : MonoBehaviour
         }
     }
 
-    CovertObject GetCloseistObject()
+    (CovertObject closestObject, float distance) GetClosestObjectInformation()
     {
         CovertObject tmp = CovertObjects[0];
+        float playerDistanceToTarget = Vector3.Distance(Camera.main.transform.position, tmp.transform.position);
         foreach (CovertObject obj in CovertObjects)
         {
             if(obj == tmp)
@@ -169,10 +188,11 @@ public class DataRecorder : MonoBehaviour
                 if(Vector3.Distance(Camera.main.transform.position, obj.transform.position) < Vector3.Distance(Camera.main.transform.position, tmp.transform.position))
                 {
                     tmp = obj;
+                    playerDistanceToTarget = Vector3.Distance(Camera.main.transform.position, tmp.transform.position);
                 }
             }
         }
-        return tmp; 
+        return (tmp, playerDistanceToTarget); 
     }
 
     public enum RecordFile
