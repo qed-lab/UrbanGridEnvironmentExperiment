@@ -21,6 +21,7 @@ public class CovertObject : MonoBehaviour
     /// The frequency of the covert shader effect
     /// </summary>
     public AnimationCurve Carve;
+    public bool NeedCue = true;
 
     GameObject CueObj;
     void Start()
@@ -35,6 +36,10 @@ public class CovertObject : MonoBehaviour
 
     void Update()
     {
+        if (!NeedCue)
+        {
+            return;
+        }
         #region Deliver the parameters to the shader
         Mat.SetVector("_CenterPosition", new Vector4(Pivot.transform.position.x, Pivot.transform.position.y, Pivot.transform.position.z, 0));
         Mat.SetFloat("_Radius", Radius);

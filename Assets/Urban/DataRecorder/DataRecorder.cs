@@ -133,7 +133,7 @@ public class DataRecorder : MonoBehaviour
 
                 if (new FileInfo(path).Length == 0)
                 {
-                    writer.WriteLine("Target Object" + "," + "Is Visible to Camera?" + "," + "Player Distance to Target" + "," + "World Time In Seconds" + "," + "Gaze Angular Distance To Target In Degrees of Arc");
+                    writer.WriteLine("Target Object" + "," + "Is Visible to Camera?" + "," + "Player Distance to Target" + "," + "World Time In Seconds" + "," + "Gaze Angular Distance To Target In Degrees of Arc" + "," + "Center Angular Distance To Target In Degrees of Arc");
                 }
 
                 (CovertObject closestObject, float distance) = GetClosestObjectInformation();
@@ -145,7 +145,8 @@ public class DataRecorder : MonoBehaviour
 
                 if (distance <= 200.0f)
                 {
-                    writer.WriteLine(closestObject.gameObject.name + "," + visibility + "," + distance + "," + Time.time + "," + closestObject.EyeSightAngle());
+                    writer.WriteLine(closestObject.gameObject.name + "," + visibility + "," + distance + "," + Time.time + "," + closestObject.EyeSightAngle() + "," + Vector3.Angle(Camera.main.transform.forward, (closestObject.transform.position - Camera.main.transform.position).normalized));
+                    Debug.Log("vIN: " + closestObject.EyeSightAngle() + "<->" + Vector3.Angle(Camera.main.transform.forward, (closestObject.transform.position - Camera.main.transform.position).normalized));
                 }
                 writer.Close();
 
