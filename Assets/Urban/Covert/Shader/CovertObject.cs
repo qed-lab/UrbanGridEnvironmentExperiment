@@ -23,7 +23,13 @@ public class CovertObject : MonoBehaviour
     public AnimationCurve Carve;
     public bool NeedCue = true;
 
+    private LinkedList<float> eyeSightAngleList = new LinkedList<float>();
+    private int capacity = 5;
+    private float sum = 0.0f;
+    private float runningEyeSightAngleAvg = 0.0f;
+
     GameObject CueObj;
+
     void Start()
     {
         if (!Pivot)
@@ -48,8 +54,11 @@ public class CovertObject : MonoBehaviour
 
 
         #region Check to see if we need to show the cue
-        
-        if (EyeSightAngle() <= 10f)
+
+        UpdateLinkedList(EyeSightAngle());
+        runningEyeSightAngleAvg = GetRunningAverage();
+
+        if (runningEyeSightAngleAvg <= 15f)
         {
             Radius = 0;
             Debug.Log("Eye sight within range");
@@ -65,6 +74,27 @@ public class CovertObject : MonoBehaviour
     {
         Vector3 tmpDir = (transform.position - Camera.main.transform.position).normalized;
         return Vector3.Angle(tmpDir, EyeSight.Instance.Trans.forward);
+    }
+
+    public void UpdateLinkedList(float value)
+    {
+        if (eyeSightAngleList.Count == capacity)
+        {
+            sum -= eyeSightAngleList.Last.Value;
+            eyeSightAngleList.RemoveLast();
+        }
+
+        eyeSightAngleList.AddFirst(value);
+        sum += value;
+    }
+
+    public float GetRunningAverage()
+    {
+        if (eyeSightAngleList.Count == 0)
+        {
+            Debug.Log("Error: no value in linkedlist!");
+        }
+        return sum / eyeSightAngleList.Count;
     }
 
     #region UGUI
