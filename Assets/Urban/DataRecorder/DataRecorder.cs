@@ -3,16 +3,22 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 using static UnityEngine.GeometryUtility;
 
 public class DataRecorder : MonoBehaviour
 {
     public bool UseGamePad = false;
 
+    public FollowSpline followSpline;
+    public Text counterDisplay;
+    //public GameObject gui_counter;
+
     public InputActionAsset ActionAsset;
     public InputActionReference Button;
     public List<CovertObject> CovertObjects;
     public Transform CovertObjectTrans;
+    private int counter = 0;
     private void OnEnable()
     {
         GetCovertObjectList(CovertObjectTrans);
@@ -27,7 +33,10 @@ public class DataRecorder : MonoBehaviour
     {
 
         StartCoroutine(RecordingEyeSightAngle());
-        
+        followSpline = GetComponent<FollowSpline>();
+        counterDisplay.text = "";
+        //gui_counter.SetActive(false);
+
     }
 
     void Update()
@@ -36,6 +45,7 @@ public class DataRecorder : MonoBehaviour
         {
             Times.Add(Time.time);
             WriteString(RecordFile.Input);
+            counter += 1;
         }
         else
         {
@@ -47,6 +57,13 @@ public class DataRecorder : MonoBehaviour
             {
                 Debug.Log("A Pressed!");
             }
+        }
+
+        if (followSpline.CurrentProgress >= 0.85f)
+        {
+            counterDisplay.text = counter.ToString();
+            //Debug.Log(followSpline.CurrentProgress);
+            //Debug.Log(counter);
         }
     }
 

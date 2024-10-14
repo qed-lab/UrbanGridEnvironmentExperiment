@@ -7,13 +7,14 @@ public class OvertObject : MonoBehaviour
     /// <summary>
     /// The distance between the object and the cue
     /// </summary>
-    [Range(0.0f, 10f)]
+    [Range(0.0f, 15f)]
     public float Radius = 0.5f;
     /// <summary>
     /// The rotation of the cue
     /// </summary>
     public Quaternion CueRotation = Quaternion.identity;
     GameObject CueObj;
+    public Vector3 cueObjectTransform;
 
     private void Start()
     {
@@ -21,7 +22,8 @@ public class OvertObject : MonoBehaviour
         CueObj = Instantiate(OvertCueManager.Instance.OvertCuePrefab);
         CueObj.transform.position = transform.position + CueRotation * transform.forward * Radius;
         CueObj.transform.LookAt(transform.position);
-        CueObj.transform.localScale *= OvertCueManager.Instance.CueSize;
+        CueObj.transform.localScale = cueObjectTransform;
+        //cueObjectTransform = CueObj.transform.localScale;
         #endregion
     }
 
@@ -38,6 +40,9 @@ public class OvertObject : MonoBehaviour
             CueObj.SetActive(true);
         }
         #endregion*/
+        CueObj.transform.position = transform.position + CueRotation * transform.forward * Radius;
+        CueObj.transform.LookAt(transform.position);
+        CueObj.transform.localScale = cueObjectTransform;
     }
 
     #region UGUI
